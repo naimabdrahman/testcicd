@@ -1,0 +1,17 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('test') {
+            steps {
+                echo 'Hello World'
+                // Get some code from a GitHub repository
+                git 'https://github.com/naimabdrahman/testcicd.git'
+				        sh '''
+					      ls -l
+				        '''
+
+            }
+        }
+    }
+}
